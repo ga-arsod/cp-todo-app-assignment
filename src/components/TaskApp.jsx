@@ -1,4 +1,5 @@
 import React from "react";
+import AddTask from "./AddTask/AddTask";
 
 import styles from "./taskApp.module.css";
 
@@ -11,6 +12,7 @@ const TaskApp = () => {
       {/* Header */}
       <TaskHeader />
       {/* Add Task */}
+      <AddTask/>
       {/* Tasks */}
     </div>
   );
