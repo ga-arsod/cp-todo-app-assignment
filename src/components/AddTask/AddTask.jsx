@@ -24,7 +24,23 @@ const AddTask = () => {
       <input value={text.text} data-testid="add-task-input" type="text" onChange={textHandleChange}/>
 
       <button disabled={text.text.length <= 0 ? true : false}  disdata-testid="add-task-button" onClick={() => {
-        setTasks(ele => [...ele, text])
+        let check = false;
+        tasks.map((ele) => {
+          if(ele.text == text.text) {
+            check = true;
+            return;
+          } 
+        })
+        
+        if(check) {
+          alert("This task is already present.")
+          return;
+        }
+        else {
+          setTasks(ele => [...ele, text]);
+        }
+
+        setText({ ...text, text: "" });
       }}>Add</button>
     </div>
   );
